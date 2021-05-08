@@ -1,26 +1,36 @@
-<!DOCTYPE html>
 <html lang="en-us">
-
-    <head>
-        <title>DemoDRA - Current Weather</title>
-
-        <link rel="stylesheet" href="/built/css/default.css" />
-
-        <script src="/bower_components/angular/angular.js"></script>
-        <script src="/bower_components/angular-route/angular-route.js"></script>
-        <script src="/js/controllers.js"></script>
-    </head>
-
-    <body>
-        <div float="left">
-            <% include includes/mainbody %>
-        </div>
-    </body>
-
-    <script>
-         angular.element(document).ready(function() {
-            angular.bootstrap(document, ['ConsoleModule']);
-        });
-    </script>
-
+<head>
+<title>Welcome to Devops Learning!!</title>
+<link rel="stylesheet" href="/built/css/default.css" />
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angularroute.
+js"></script>
+<script src="/js/controllers.js"></script>
+<style>
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding-top: 10%;
+}
+marquee {
+text-align:center;
+}
+</style>
+</head>
+<body>
+<center>
+<img src= "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWMAAACOCAMAAADTsZk7AAAAclBMVEX///8fcMEAZb0AZ76GqtgNa7/y9vt0n9T3+v1tmdEXbcBOicvE1ew1fMYAab690OmsxeTR4PHd5/SjvuGPsdzp8fkkc8Lj7PecuN58otUAYrzK2e21yeZbkc5XjMsAX7sAWrkvecVDg8iVtd2LrdplltDg0fH+AAAHd0lEQVR4nO2d62KqOhBGIYiXVPGKWmqLtvX9X/G0XlBuH5lk9tkbmPVXMiHLSmEmCZ7PgFp5N3YBR7wb28/z5rDzmnlTRuFK6LFB8AdhOYIB4cLjkPGHHPu+DiO1HU15HJcJDhTFc7uxRf+44ws6CAf4r9nWsf6gOH7XVp20wvEPkTqvwOhtHftJbK54aDm0tjj2/VBNhvyOo7W540Vk2UdrHP/8sJMvdsf609zxp92lolWOf/5FzWouGNaOn868idj6t9Iqx75W1b9te8fRxtTx3vJS8es4ZCB5OE444tWik3OlY4deTR2fIssO1MKbMPCe3VrF7xzxAOdBxfiXZ+t474YXC/uBnRtv7wVBEARBEAShVww5YA5H7NMbu0VqrIa4xR97ioHj41n6yBHPhPQpCzd16jU5NTl+SRzCH9fcOSHr7AyZp/y6fU7oQlPybegUvmV5txzRI3Ph6Lgp+ba2Tbldo7fYsf9ImTk69n3s2DY7f6XVjoMsoeXqWL0hxbvEKXirHYevXI4fkaqwzs5fabVjf8t2rYCZ+pPTpaLljrM7C2fHal6veOUYnKnWlD4cpxzxDEnuZlxqTReC93rHA+V4lgtvwMBrdqs6fOWIZ8rd8cq519f6Zz3n0PAfqiAIgiAIgiAInjdeQajhhjBa/cztxqawcdzQ1ChYg4kKTFfxxKh0k0SGUTJgJei4R03nuIh0BGmGdUqsCaUjhiBHk2VYv+DpzNvmAHmmKE+EVws0LCVCeV968aIi+UbOzqvuOQYjojsuJ9/o1cnuOY7A1c/i77iUfPuif09dc6xnoKlFoTMo/tfbkkN0zjEsEVk4jhb5EEt6dr5zjiO0FNfCcXEl2SAkh+ic4wTdW9tMiigsO6VfKgiOjxFAG0bJmKYgWoLvj1FTBRcwrhM0iJqTya2ynEIN1aSmjof7NcIwSsYOhdsvUdMVPBFYxFniQVSTuyBPLQLs4WOrIAiCIAiCIAiVjOdTBDVcDKPZMW/cbGlnG/qaL7U9L/NaU1CPMt5V4840BeEsSRrHsrbsNb086+2QAsA/WWuyQy0ae7VdKHNNvtGz87cT64zjcsWCz/E1+WY7d74zjvXW4KqHHQOF0RfOzkP7nXEcmAwEOtYf9ab0CWbn9QuS3BXHCqZDjRxH6xmIvwKLZPT7oAeOzRQ3OQYLwsLvZf0ZRwdYgeqEYx0ZzgXDjvcxWNh4GtVrVONXHsfw5pB+f2x5r1mF2pru9Arvj9Mvb6bqO0nqP/rwRvWfEu6Px3MI1XGMw9Ew3nl7BcOsGj6vZectec5PEARBEARBEISM8XqBoIbbwWg01sb3+EsYZ2kwzprOp/AQ0/lucN5mwDtvk0iwNX1YhfM2bxM0TwGp7+u0/REK3IlaE1dOqPmYcqPrjFWmnNA/7Nj3A47c5tXxkLSr2G1KeR8cs+TobzPLKa+50rciYi8cM9Sa7o4pr2u7vwiuH46171ozvTv2CBfk+2LAfjh2r/1njkHFo4C+L6fuiWPnOSyZY/Pd94L76pP/odZkMReLsdZ0P4nUbS7WY4Nqv77klO9R3Vsw1ZqWEKrjIQ5nR2NZLzZrvjLtcGXWQmpNgiAIgiAIgkBnONggqOFW3yDYN9wgATbdwBVWb7DX56YxHu7v4c91gQMKPGCpNUUNLywp47JHCNzow36PkPxmIKiP6+HP5kYKHGm8R0j397qJct/sd0OGM5w8H92+vNvf2bMp77jp7RRB7qLUL8f2e4/lHXszXHLK7zDaL8f2e+gVHOP6dOGr7Jdj+70gC47R4pBSjbZnjq33NC049sByvdKA++bYdm/eouMD6Kf4BkOuWhPYRZm+xzTcKPr4Zd0U7zG9R03TQq/jpP6NpcfCxKQR2nfauNbkxRDTKNkAYDT4YISbxjG4Hg9JvRLGiwNT5QiCIAiCIAhC73ibjNzJHptijmimTLL88YbasuIBsUrEpGJ+6Jp8nt5BaWeij/sJ7JLQPZwp2buPvZeI1lJVVLjGafnUk4qEyCignqd3cHvT+gWdzbn+O+/wxnmzCoo5oQuTcpCq/BfMCVXSZscPAyyO30rnXky59c/xU32CxXF5xzFVtRawV46fSpk8jou7ilXXsnrl+GnRBI/jVWJyVJ8cRwNux8X6dFKZDf5Ljh9ruehv9bPm2QCT4/zmhcVXZDk4VqEzwfP98f+Eei4XvUTExtWO49zZ1yxQGwXUU/259+YgOwOWaLQurXqt1OfRj7HvSxAEQRAEQRB6yvzzxZnPLMsYM0TDXU2qBjGiRqnfY2RxHcG59oANeYg8taZHviJxj4ZIqsdOrTUF9aupdunlgPrppK/EvlpWa9KqZrYyU07o+n39xqpOuV0ddzq3Gczq9ijkdLyIalNunXesk/rfL6fjcfLzOdgTqruOQzUBs8E5HXvn0A9AX111HKkz3MqU1fE00Gj/uE461kE4aFhmwerY8wP0nhkbxwxW9J+qNekwUttR8xtUP4jjxo4HCfr0lfxH6c23M2dO2YPBjiHag8/J5mC0UOh8ogXewhVryxH6dEDsazb7D+/ajJ121laEAAAAAElFTkSuQmCC" alt="ibm_logo"width="200"
+height="150" >
+<br>
+</center>
+<marquee direction="up" behavior="slide"
+style="height:100px"><font size="150px"> WELCOME Harshit TO DEVOPS
+LEARNING </marquee>
+</body>
+<script>
+angular.element(document).ready(function() {
+angular.bootstrap(document, ['ConsoleModule']);
+});
+</script>
 </html>
